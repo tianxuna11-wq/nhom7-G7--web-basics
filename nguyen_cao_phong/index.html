@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nguyễn Cao Phong | Trang giới thiệu cá nhân</title>
+    <meta
+      name="description"
+      content="Trang giới thiệu cá nhân của Nguyễn Cao Phong, MSV 24103130."
+    />
+    <meta name="author" content="Nguyễn Cao Phong" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Caveat:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --desk: #1b2434;
+        --paper: #e9ebe1;
+        --paper-card: #f4f5ec;
+        --rule: #d7dcc9;
+        --ink: #262e22;
+        --ink-soft: #68715c;
+        --pen: #2c4a82;
+        --pen-deep: #1b2f55;
+        --marker: #f0b429;
+        --marker-soft: #fae3ac;
+        --red-rule: #b0473d;
+        --radius-md: 10px;
+        --shadow: 0 18px 40px -18px rgba(16, 22, 15, 0.35);
+        --shadow-sm: 0 8px 20px -12px rgba(16, 22, 15, 0.28);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+        background-color: var(--paper);
+        background-image: repeating-linear-gradient(
+          to bottom,
+          transparent 0 35px,
+          var(--rule) 35px 36px
+        );
+        color: var(--ink);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+
+      .handwrite {
+        font-family: "Caveat", "Segoe UI", cursive;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--pen);
+        outline-offset: 3px;
+      }
+
+      /* ===== layout ===== */
+      .wrap {
+        max-width: 840px;
+        margin: 0 auto;
+        padding: 0 24px 0 96px;
+        position: relative;
+        z-index: 0;
+      }
+      .wrap::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 64px;
+        width: 2px;
+        background: var(--red-rule);
+        opacity: 0.55;
+        z-index: -1;
+      }
+
+      /* ===== nav ===== */
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: var(--desk);
+        padding: 14px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .nav-brand {
+        color: var(--paper);
+        font-weight: 800;
+        font-size: 1.02rem;
+      }
+      .nav-brand .sub {
+        opacity: 0.55;
+        font-weight: 500;
+        font-size: 0.82rem;
+      }
+      .nav-tabs {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .nav-tabs a {
+        background: rgba(233, 235, 225, 0.1);
+        color: var(--paper);
+        font-size: 0.78rem;
+        font-weight: 700;
+        padding: 8px 13px;
+        border-radius: 20px;
+        border: 1px solid rgba(233, 235, 225, 0.25);
+        transition:
+          background 0.18s ease,
+          transform 0.18s ease,
+          border-color 0.18s ease;
+      }
+      .nav-tabs a:hover,
+      .nav-tabs a:focus-visible {
+        background: var(--pen);
+        border-color: var(--pen);
+        transform: translateY(-2px);
+      }
+
+      /* ===== hero ===== */
+      .hero {
+        padding: 56px 0 36px;
+      }
+      .eyebrow {
+        display: inline-block;
+        color: var(--pen-deep);
+        font-size: 1.15rem;
+        font-weight: 600;
+        transform: rotate(-2deg);
+        margin-bottom: 8px;
+      }
+      .eyebrow-lg {
+        font-size: 1.5rem;
+      }
+
+      .hero-top {
+        display: flex;
+        gap: 26px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .polaroid {
+        position: relative;
+        flex: none;
+        width: 112px;
+        height: 132px;
+        background: var(--pen-deep);
+        padding: 8px 8px 20px;
+        box-shadow: var(--shadow-sm);
+        transform: rotate(-4deg);
+      }
+      .polaroid .tape {
+        position: absolute;
+        top: -11px;
+        left: 50%;
+        width: 58px;
+        height: 22px;
+        background: rgba(240, 180, 41, 0.55);
+        border: 1px solid rgba(240, 180, 41, 0.8);
+        transform: translateX(-50%) rotate(-3deg);
+      }
+      .polaroid .initials {
+        width: 100%;
+        height: 100%;
+        background: var(--desk);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--marker-soft);
+        font-weight: 800;
+        font-size: 1.7rem;
+        letter-spacing: 0.04em;
+        overflow: hidden;
+      }
+      .polaroid img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-text {
+        flex: 1;
+        min-width: 240px;
+      }
+      .hero-text h1 {
+        font-size: clamp(1.9rem, 4.6vw, 2.7rem);
+        font-weight: 800;
+        color: var(--ink);
+        line-height: 1.15;
+      }
+      .msv-stamp {
+        display: inline-block;
+        margin-top: 10px;
+        border: 2px solid var(--pen);
+        color: var(--pen);
+        border-radius: 6px;
+        padding: 4px 10px;
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+        transform: rotate(-1.5deg);
+      }
+      .tagline {
+        font-family: "Caveat", "Segoe UI", cursive;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: var(--pen-deep);
+        line-height: 1.35;
+        max-width: 480px;
+        margin-top: 14px;
+        transform: rotate(-0.6deg);
+      }
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 22px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 11px 22px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease;
+      }
+      .btn-fill {
+        background: var(--pen);
+        color: var(--paper);
+      }
+      .btn-outline {
+        border: 2px solid var(--pen);
+        color: var(--pen);
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
+      }
+
+      /* ===== index card ===== */
+      .index-card {
+        background: var(--paper-card);
+        border-top: 4px solid var(--red-rule);
+        box-shadow: var(--shadow-sm);
+        padding: 24px 26px;
+        margin: 38px 0 6px;
+        max-width: 520px;
+      }
+      .field {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        padding: 7px 0;
+        flex-wrap: wrap;
+      }
+      .field-label {
+        color: var(--ink-soft);
+        font-size: 0.88rem;
+        white-space: nowrap;
+      }
+      .field-dots {
+        flex: 1;
+        min-width: 20px;
+        border-bottom: 2px dotted var(--rule);
+        transform: translateY(-4px);
+      }
+      .field-value {
+        font-weight: 700;
+        color: var(--pen-deep);
+        white-space: nowrap;
+        font-size: 0.98rem;
+      }
+      .field-note {
+        color: var(--ink-soft);
+        font-size: 0.78rem;
+      }
+
+      /* ===== dividers / section heads ===== */
+      .tear {
+        border: none;
+        border-top: 2px dashed var(--rule);
+        margin: 52px 0 38px;
+      }
+      .sec-head {
+        margin-bottom: 30px;
+      }
+      .sec-head h2 {
+        font-size: clamp(1.4rem, 3vw, 1.85rem);
+        font-weight: 800;
+        color: var(--ink);
+      }
+      .sec-head p {
+        color: var(--ink-soft);
+        margin-top: 8px;
+        max-width: 520px;
+      }
+
+      /* ===== hobby cards ===== */
+      .hobby-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 26px 20px;
+      }
+      .hobby-card {
+        background: var(--paper-card);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
+        padding: 20px 22px;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .hobby-card:nth-child(1) {
+        transform: rotate(-1.2deg);
+      }
+      .hobby-card:nth-child(2) {
+        transform: rotate(0.8deg);
+      }
+      .hobby-card:nth-child(3) {
+        transform: rotate(-0.6deg);
+      }
+      .hobby-card:nth-child(4) {
+        transform: rotate(1deg);
+      }
+      .hobby-card:nth-child(5) {
+        transform: rotate(-0.4deg);
+      }
+      .hobby-card:hover {
+        transform: rotate(0deg) translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+      .hobby-card h3 {
+        font-size: 1.02rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .hobby-card h3::before {
+        content: "✦ ";
+        color: var(--marker);
+      }
+      .hobby-card p {
+        font-size: 0.92rem;
+        color: var(--ink-soft);
+      }
+      .hobby-card .strength {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: var(--ink);
+      }
+      .hobby-card mark {
+        background: var(--marker);
+        color: var(--ink);
+        padding: 1px 5px;
+        border-radius: 3px 6px 4px 7px;
+        font-weight: 600;
+      }
+
+      /* ===== goals + skills ===== */
+      .goals-wrap {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        gap: 36px;
+      }
+      .goal-item {
+        position: relative;
+        padding: 9px 0;
+      }
+      .goal-check {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .goal-label {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        cursor: pointer;
+      }
+      .box {
+        width: 22px;
+        height: 22px;
+        border: 2px solid var(--pen);
+        border-radius: 5px;
+        position: relative;
+        flex: none;
+        margin-top: 2px;
+      }
+      .goal-check:checked + .goal-label .box {
+        background: var(--pen);
+      }
+      .goal-check:checked + .goal-label .box::after {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 2px;
+        width: 6px;
+        height: 11px;
+        border: solid var(--paper);
+        border-width: 0 2px 2px 0;
+        transform: rotate(40deg);
+      }
+      .goal-check:focus-visible + .goal-label .box {
+        outline: 2px solid var(--pen);
+        outline-offset: 2px;
+      }
+      .goal-text {
+        font-size: 0.96rem;
+        padding-top: 1px;
+      }
+      .goal-check:checked + .goal-label .goal-text {
+        text-decoration: line-through;
+        opacity: 0.55;
+      }
+
+      .skills-label {
+        font-size: 1.1rem;
+        color: var(--pen-deep);
+        margin-bottom: 12px;
+      }
+      .stamp-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 11px 12px;
+      }
+      .stamp {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 15px;
+        border: 2px solid var(--pen);
+        border-radius: 6px;
+        color: var(--pen);
+        font-weight: 700;
+        font-size: 0.76rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .stamp::before {
+        content: "";
+        position: absolute;
+        inset: 3px;
+        border: 1px solid var(--pen);
+        opacity: 0.4;
+        border-radius: 3px;
+      }
+      .stamp:nth-child(1) {
+        transform: rotate(-2deg);
+      }
+      .stamp:nth-child(2) {
+        transform: rotate(1.4deg);
+      }
+      .stamp:nth-child(3) {
+        transform: rotate(-1deg);
+      }
+      .stamp:nth-child(4) {
+        transform: rotate(1.8deg);
+      }
+      .stamp:nth-child(5) {
+        transform: rotate(-1.6deg);
+      }
+      .stamp:nth-child(6) {
+        transform: rotate(1deg);
+      }
+
+      /* ===== contact ===== */
+      .contact-row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      .contact-stamp {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        border: 2px solid var(--pen);
+        border-radius: 24px;
+        color: var(--pen);
+        font-weight: 700;
+        font-size: 0.85rem;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+      }
+      .contact-stamp:hover {
+        background: var(--pen);
+        color: var(--paper);
+      }
+      .contact-stamp svg {
+        width: 17px;
+        height: 17px;
+        flex: none;
+      }
+
+      /* ===== footer ===== */
+      footer {
+        background: var(--desk);
+        color: var(--rule);
+        text-align: center;
+        padding: 32px 24px;
+        margin-top: 60px;
+      }
+      footer .sign {
+        font-family: "Caveat", "Segoe UI", cursive;
+        font-size: 1.3rem;
+        color: var(--marker-soft);
+      }
+      footer .copy {
+        font-size: 0.78rem;
+        margin-top: 8px;
+        color: #9aa396;
+      }
+
+      /* ===== load-in (one orchestrated moment) ===== */
+      .settle {
+        animation: settleIn 0.7s ease-out both;
+      }
+      .settle.delay {
+        animation-delay: 0.15s;
+      }
+      @keyframes settleIn {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .settle {
+          animation: none;
+          opacity: 1;
+          transform: none;
+        }
+        .hobby-card,
+        .btn,
+        .contact-stamp,
+        .nav-tabs a {
+          transition: none;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .wrap {
+          padding: 0 18px;
+        }
+        .wrap::before {
+          display: none;
+        }
+        .goals-wrap {
+          grid-template-columns: 1fr;
+        }
+        .navbar {
+          padding: 12px 16px;
+        }
+        .hero {
+          padding: 40px 0 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">NCP <span class="sub">· sổ tay cá nhân</span></div>
+      <div class="nav-tabs">
+        <a href="#gioi-thieu">01 · Giới thiệu</a>
+        <a href="#so-thich">02 · Sở thích</a>
+        <a href="#muc-tieu">03 · Mục tiêu</a>
+        <a href="#lien-he">04 · Liên hệ</a>
+      </div>
+    </nav>
+
+    <main>
+      <div class="wrap">
+        <section class="hero" id="gioi-thieu">
+          <div class="eyebrow eyebrow-lg handwrite settle">✦ trang mở đầu</div>
+          <div class="hero-top">
+            <div class="polaroid settle delay">
+              <div class="tape"></div>
+              <div class="initials">
+                <!-- Thay ảnh thật: xoá chữ NCP bên dưới, bỏ comment thẻ <img> và đổi src -->
+                NCP
+                <!-- <img src="avatar.jpg" alt="Ảnh đại diện Nguyễn Cao Phong"> -->
+              </div>
+            </div>
+            <div class="hero-text settle delay">
+              <h1>Nguyễn Cao Phong</h1>
+              <div class="msv-stamp">MSV 24103130</div>
+              <p class="tagline">Sống nhiều cuộc đời</p>
+              <div class="hero-actions">
+                <a href="#so-thich" class="btn btn-fill">Xem trang sở thích</a>
+                <a href="#lien-he" class="btn btn-outline">Liên hệ với mình</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="index-card">
+            <div class="field">
+              <span class="field-label">Mã sinh viên</span>
+              <span class="field-dots"></span>
+              <span class="field-value">24103130</span>
+            </div>
+            <div class="field">
+              <span class="field-label">Ngày sinh</span>
+              <span class="field-dots"></span>
+              <span class="field-value">23/10/2006</span>
+              <span class="field-note">♏</span>
+            </div>
+            <div class="field">
+              <span class="field-label">Giới tính</span>
+              <span class="field-dots"></span>
+              <span class="field-value">Nam</span>
+            </div>
+            <div class="field">
+              <span class="field-label">Tuổi hiện tại</span>
+              <span class="field-dots"></span>
+              <span class="field-value" id="age">--</span>
+            </div>
+          </div>
+        </section>
+
+        <hr class="tear" />
+
+        <section id="so-thich">
+          <div class="sec-head">
+            <div class="eyebrow handwrite">✦ trang 02</div>
+            <h2>Nhật ký sở thích &amp; sở trường</h2>
+            <p>
+              Những điều nhỏ bé nuôi dưỡng một tâm hồn hướng nội, cùng kỹ năng
+              mà chúng âm thầm rèn giũa.
+            </p>
+          </div>
+          <div class="hobby-grid">
+            <article class="hobby-card">
+              <h3>Đọc sách</h3>
+              <p>
+                Đắm mình vào những trang sách văn học, tâm lý và khoa học viễn
+                tưởng trong các buổi tối yên tĩnh.
+              </p>
+              <p class="strength">
+                Sở trường:
+                <mark
+                  >tư duy phản biện, phân tích &amp; tổng hợp thông tin</mark
+                >
+              </p>
+            </article>
+            <article class="hobby-card">
+              <h3>Lập trình &amp; công nghệ</h3>
+              <p>
+                Thích tìm hiểu công nghệ mới, tự mày mò dự án nhỏ và giải quyết
+                vấn đề bằng những dòng code.
+              </p>
+              <p class="strength">
+                Sở trường:
+                <mark>tư duy logic, giải quyết vấn đề, tự học nhanh</mark>
+              </p>
+            </article>
+            <article class="hobby-card">
+              <h3>Nghe nhạc lo-fi &amp; indie</h3>
+              <p>
+                Những giai điệu nhẹ nhàng luôn là người bạn đồng hành khi học
+                tập hay làm việc một mình.
+              </p>
+              <p class="strength">
+                Sở trường: <mark>tập trung cao độ, cảm thụ nghệ thuật</mark>
+              </p>
+            </article>
+            <article class="hobby-card">
+              <h3>Game chiến thuật &amp; nhập vai</h3>
+              <p>
+                Đam mê những tựa game đòi hỏi tư duy chiến thuật và cốt truyện
+                dài hơi, sâu sắc.
+              </p>
+              <p class="strength">
+                Sở trường:
+                <mark>tư duy chiến lược, kiên nhẫn, lập kế hoạch</mark>
+              </p>
+            </article>
+            <article class="hobby-card">
+              <h3>Viết lách</h3>
+              <p>
+                Thích ghi lại suy nghĩ, cảm xúc qua những trang nhật ký hoặc bài
+                viết cá nhân.
+              </p>
+              <p class="strength">
+                Sở trường: <mark>diễn đạt mạch lạc, khả năng viết lách</mark>
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <hr class="tear" />
+
+        <section id="muc-tieu">
+          <div class="sec-head">
+            <div class="eyebrow handwrite">✦ trang 03</div>
+            <h2>Mục tiêu &amp; kỹ năng</h2>
+            <p>
+              Một vài điều mình đang hướng tới, và những kỹ năng mình tự hào.
+            </p>
+          </div>
+          <div class="goals-wrap">
+            <ul class="goal-list">
+              <li class="goal-item">
+                <input type="checkbox" id="g1" class="goal-check" />
+                <label for="g1" class="goal-label"
+                  ><span class="box"></span
+                  ><span class="goal-text"
+                    >Trau dồi kỹ năng lập trình, đặc biệt là phát triển
+                    web</span
+                  ></label
+                >
+              </li>
+              <li class="goal-item">
+                <input type="checkbox" id="g2" class="goal-check" />
+                <label for="g2" class="goal-label"
+                  ><span class="box"></span
+                  ><span class="goal-text"
+                    >Cân bằng giữa thời gian ở một mình và làm việc nhóm hiệu
+                    quả</span
+                  ></label
+                >
+              </li>
+              <li class="goal-item">
+                <input type="checkbox" id="g3" class="goal-check" />
+                <label for="g3" class="goal-label"
+                  ><span class="box"></span
+                  ><span class="goal-text"
+                    >Duy trì thói quen đọc ít nhất 20 cuốn sách mỗi năm</span
+                  ></label
+                >
+              </li>
+            </ul>
+            <div>
+              <p class="skills-label handwrite">Kỹ năng nổi bật:</p>
+              <div class="stamp-row">
+                <span class="stamp">HTML/CSS</span>
+                <span class="stamp">Tư duy logic</span>
+                <span class="stamp">Làm việc độc lập</span>
+                <span class="stamp">Kiên nhẫn</span>
+                <span class="stamp">Quản lý thời gian</span>
+                <span class="stamp">Sáng tạo</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr class="tear" />
+
+        <section id="lien-he">
+          <div class="sec-head">
+            <div class="eyebrow handwrite">✦ trang cuối</div>
+            <h2>Liên hệ với mình</h2>
+            <p>
+              Rất vui nếu được kết nối, dù đôi khi mình phản hồi hơi chậm vì...
+              đang mải đọc sách. 😄
+            </p>
+          </div>
+          <!-- Cập nhật href bên dưới bằng thông tin liên hệ thật của bạn -->
+          <div class="contact-row">
+            <a href="#" class="contact-stamp">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Email
+            </a>
+            <a href="#" class="contact-stamp">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                ></path>
+              </svg>
+              Nhắn tin
+            </a>
+            <a href="#" class="contact-stamp">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                ></path>
+              </svg>
+              Website
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="sign handwrite">
+        hết trang rồi, cảm ơn đã ghé đọc nhật ký của mình 🤍
+      </div>
+      <div class="copy">
+        © <span id="year"></span> Nguyễn Cao Phong · Bài tập cá nhân
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      var dob = new Date(2006, 9, 23);
+      var today = new Date();
+      var age = today.getFullYear() - dob.getFullYear();
+      var m = today.getMonth() - dob.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+        age--;
+      }
+      document.getElementById("age").textContent = age + " tuổi";
+    </script>
+  </body>
+</html>
