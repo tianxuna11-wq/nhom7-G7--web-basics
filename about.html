@@ -3,143 +3,187 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giới Thiệu Nhóm G7 - Web Basics</title>
+    <title>Giới Thiệu Nhóm 7 (G7) - Web Basics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
-        --primary-color: #2c3e50;
-        --accent-color: #3498db;
-        --bg-color: #f8f9fa;
+        --primary: #1e3a8a;
+        --primary-light: #2563eb;
+        --secondary: #0d9488;
+        --accent: #f59e0b;
+        --bg-color: #f8fafc;
         --card-bg: #ffffff;
-        --text-color: #333333;
+        --text-color: #1e293b;
+        --text-muted: #64748b;
+        --border-color: #e2e8f0;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+        --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.08);
+        --radius: 12px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         background-color: var(--bg-color);
         color: var(--text-color);
-        margin: 0;
-        padding: 40px 20px;
         line-height: 1.6;
+        padding: 40px 20px;
       }
 
       .container {
-        max-width: 900px;
+        max-width: 960px;
         margin: 0 auto;
       }
 
-      /* Phần Tiêu đề */
+      /* 1. Phần Tiêu đề */
       .header-section {
         text-align: center;
-        background: linear-gradient(135deg, #2c3e50, #3498db);
+        background: linear-gradient(135deg, var(--primary), var(--primary-light));
         color: white;
-        padding: 40px;
-        border-radius: 12px;
-        margin-bottom: 40px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 45px 30px;
+        border-radius: var(--radius);
+        margin-bottom: 35px;
+        box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.25);
       }
 
       .header-section h1 {
-        margin: 0 0 10px 0;
         font-size: 32px;
-        letter-spacing: 1px;
+        font-weight: 800;
+        margin-bottom: 12px;
+        letter-spacing: -0.5px;
       }
 
       .header-section p {
-        margin: 0;
         font-size: 16px;
-        opacity: 0.9;
+        opacity: 0.95;
+        max-width: 650px;
+        margin: 0 auto;
+        font-weight: 400;
       }
 
-      /* Danh sách thành viên gọn gàng */
-      .member-nav {
+      /* Section chung */
+      .section-card {
         background: var(--card-bg);
-        padding: 20px 30px;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        margin-bottom: 40px;
+        border-radius: var(--radius);
+        padding: 30px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border-color);
+        margin-bottom: 35px;
       }
 
-      .member-nav h2 {
-        margin-top: 0;
-        color: var(--primary-color);
-        font-size: 20px;
-        border-bottom: 2px solid #eaeaea;
-        padding-bottom: 10px;
-      }
-
-      .member-nav ul {
-        margin: 0;
-        padding-left: 20px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 10px;
-      }
-
-      .member-nav li {
-        font-weight: 500;
-        color: #555;
-      }
-
-      /* Thông tin chi tiết từng thành viên dạng thẻ (Card Grid) */
       .section-title {
-        color: var(--primary-color);
+        color: var(--primary);
         font-size: 22px;
+        font-weight: 700;
         margin-bottom: 20px;
-        border-left: 5px solid var(--accent-color);
-        padding-left: 10px;
+        border-left: 5px solid var(--secondary);
+        padding-left: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
 
+      /* 2. Danh sách thành viên */
+      .member-list-ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+        padding: 0;
+      }
+
+      .member-list-ul li {
+        background: #f1f5f9;
+        padding: 12px 18px;
+        border-radius: 8px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-left: 3px solid var(--primary-light);
+      }
+
+      .badge-leader {
+        background: #dbeafe;
+        color: #1e40af;
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-left: auto;
+      }
+
+      /* 3. Thông tin chi tiết từng thành viên */
       .members-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
         gap: 20px;
+      }
+
+      @media (max-width: 500px) {
+        .members-grid {
+          grid-template-columns: 1fr;
+        }
       }
 
       .member-card {
         background: var(--card-bg);
-        border-radius: 10px;
-        padding: 25px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        border-radius: var(--radius);
+        padding: 24px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border-color);
         display: flex;
         align-items: center;
         gap: 20px;
-        transition:
-          transform 0.2s ease,
-          box-shadow 0.2s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
       .member-card:hover {
         transform: translateY(-3px);
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--shadow-md);
       }
 
       .member-card img {
-        width: 100px;
-        height: 100px;
+        width: 95px;
+        height: 95px;
         border-radius: 50%;
         object-fit: cover;
-        border: 3px solid var(--accent-color);
+        border: 3px solid var(--secondary);
+        background: #f8fafc;
         flex-shrink: 0;
       }
 
       .member-info h3 {
-        margin: 0 0 5px 0;
-        color: var(--primary-color);
-        font-size: 18px;
+        margin: 0 0 6px 0;
+        color: var(--primary);
+        font-size: 19px;
       }
 
       .member-info p {
-        margin: 0 0 12px 0;
+        margin: 0 0 14px 0;
         font-size: 14px;
-        color: #666;
+        color: var(--text-muted);
+        line-height: 1.5;
       }
 
       .profile-link {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
         text-decoration: none;
-        background-color: var(--accent-color);
+        background-color: var(--primary-light);
         color: white;
-        padding: 6px 14px;
+        padding: 7px 16px;
         border-radius: 20px;
         font-size: 13px;
         font-weight: 600;
@@ -147,129 +191,333 @@
       }
 
       .profile-link:hover {
-        background-color: #2980b9;
+        background-color: var(--primary);
+      }
+
+      /* 4. Bảng phân công công việc */
+      .table-wrapper {
+        overflow-x: auto;
+      }
+
+      .styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        text-align: left;
+      }
+
+      .styled-table thead tr {
+        background-color: var(--primary);
+        color: #ffffff;
+      }
+
+      .styled-table th,
+      .styled-table td {
+        padding: 14px 18px;
+        border: 1px solid var(--border-color);
+      }
+
+      .styled-table tbody tr:nth-of-type(even) {
+        background-color: #f8fafc;
+      }
+
+      .styled-table tbody tr:hover {
+        background-color: #f1f5f9;
+      }
+
+      .status-pill {
+        background-color: #d1fae5;
+        color: #065f46;
+        padding: 3px 10px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 12px;
+        display: inline-block;
+      }
+
+      /* 5. Form liên hệ */
+      .contact-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .form-group-full {
+        grid-column: span 2;
+      }
+
+      @media (max-width: 600px) {
+        .contact-form {
+          grid-template-columns: 1fr;
+        }
+        .form-group-full {
+          grid-column: span 1;
+        }
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .form-group label {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-color);
+      }
+
+      .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group textarea {
+        padding: 12px 14px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+
+      .form-group input[type="text"]:focus,
+      .form-group input[type="email"]:focus,
+      .form-group textarea:focus {
+        border-color: var(--primary-light);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      }
+
+      .form-group input[type="submit"] {
+        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: opacity 0.2s, transform 0.1s;
+        justify-self: start;
+      }
+
+      .form-group input[type="submit"]:hover {
+        opacity: 0.95;
+      }
+
+      .form-group input[type="submit"]:active {
+        transform: scale(0.98);
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 13px;
+        color: var(--text-muted);
       }
     </style>
   </head>
   <body>
     <div class="container">
       <!-- 1. Phần Tiêu đề -->
-      <div class="header-section">
-        <h1>Nhóm G7 - Web Basics</h1>
+      <header class="header-section">
+        <h1>Nhóm 7 (G7) - Web Basics</h1>
         <p>
-          Đồ án học tập môn Xây dựng Ứng dụng Web - Nơi hội tụ tinh hoa và sự
-          sáng tạo.
+          Đồ án học tập môn Xây dựng Ứng dụng Web - Nơi hội tụ tinh thần hợp tác,
+          đam mê học hỏi và năng lực phát triển website tiêu chuẩn.
         </p>
-      </div>
+      </header>
 
       <!-- 2. Danh sách thành viên -->
-      <div
-        style="
-          background: #ffffff;
-          padding: 20px;
-          border-radius: 12px;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-          font-family: Arial, sans-serif;
-        "
-      >
-        <h3
-          style="
-            margin-top: 0;
-            color: #1e3a8a;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 10px;
-          "
-        >
-          Thành viên tham gia dự án
-        </h3>
-        <ul style="padding-left: 20px; margin-bottom: 0; line-height: 2">
+      <section class="section-card">
+        <h2 class="section-title">Danh Sách Thành Viên</h2>
+        <ul class="member-list-ul">
           <li>
+            <span>👤</span>
             <strong>Nguyễn Cao Phong</strong>
-            <span
-              style="
-                background: #dbeafe;
-                color: #1e40af;
-                padding: 2px 8px;
-                border-radius: 12px;
-                font-size: 0.85rem;
-                font-weight: bold;
-                margin-left: 6px;
-              "
-              >Nhóm trưởng</span
-            >
+            <span class="badge-leader">Nhóm trưởng</span>
           </li>
-          <li>Trần Thanh Trà</li>
-          <li>Tạ Ánh Dương</li>
-          <li>Cao Hải Đăng</li>
+          <li>
+            <span>👤</span>
+            <strong>Trần Thanh Trà</strong>
+          </li>
+          <li>
+            <span>👤</span>
+            <strong>Tạ Ánh Dương</strong>
+          </li>
+          <li>
+            <span>👤</span>
+            <strong>Cao Hải Đăng</strong>
+          </li>
         </ul>
-      </div>
+      </section>
+
       <!-- 3. Thông tin chi tiết từng thành viên -->
-      <h2 class="section-title">Hồ Sơ Thành Viên</h2>
+      <section style="margin-bottom: 35px;">
+        <h2 class="section-title">Hồ Sơ Chi Tiết Từng Thành Viên</h2>
+        <div class="members-grid">
+          <!-- Thành viên 1: Nguyễn Cao Phong -->
+          <div class="member-card">
+            <img
+              src="https://api.dicebear.com/7.x/personas/svg?seed=NguyenCaoPhong"
+              alt="Ảnh đại diện Nguyễn Cao Phong"
+            />
+            <div class="member-info">
+              <h3>Nguyễn Cao Phong</h3>
+              <p>
+                <strong>Vai trò:</strong> Nhóm trưởng<br />
+                Khởi tạo dự án GitHub, điều phối tiến độ chung, thiết kế kiến trúc và hoàn thiện trang cá nhân.
+              </p>
+              <a href="nguyen_cao_phong/index.html" class="profile-link">
+                Xem trang cá nhân &rarr;
+              </a>
+            </div>
+          </div>
 
-      <div class="members-grid">
-        <!-- Thành viên 1: Nguyễn Cao Phong -->
-        <div class="member-card">
-          <img
-            src="nguyen_cao_phong/link-anh.jpg"
-            alt="Ảnh Nguyễn Cao Phong"
-          />
-          <div class="member-info">
-            <h3>Nguyễn Cao Phong</h3>
-            <p>
-              <strong>Vai trò:</strong> Nhóm trưởng<br />Chịu trách nhiệm khởi
-              tạo dự án, điều phối công việc chung và hoàn thiện trang cá nhân.
-            </p>
-            <a href="nguyen_cao_phong/index.html" class="profile-link"
-              >Xem trang cá nhân &rarr;</a
-            >
+          <!-- Thành viên 2: Trần Thanh Trà -->
+          <div class="member-card">
+            <img
+              src="https://api.dicebear.com/7.x/personas/svg?seed=TranThanhTra"
+              alt="Ảnh đại diện Trần Thanh Trà"
+            />
+            <div class="member-info">
+              <h3>Trần Thanh Trà</h3>
+              <p>
+                <strong>Vai trò:</strong> Phát triển nội dung<br />
+                Biên tập câu từ tài liệu, xây dựng cấu trúc bài giới thiệu và hoàn thiện trang cá nhân.
+              </p>
+              <a href="tran_thanh_tra/index.html" class="profile-link">
+                Xem trang cá nhân &rarr;
+              </a>
+            </div>
           </div>
-        </div>
 
-        <!-- Thành viên 2 -->
-        <div class="member-card">
-          <img src="tran_thanh_tra/link-anh.jpg" alt="Ảnh thành viên 2" />
-          <div class="member-info">
-            <h3>Trần Thanh Trà</h3>
-            <p>
-              <strong>Vai trò:</strong> Phát triển nội dung<br />Hỗ trợ xây dựng
-              giao diện HTML và tổng hợp thông tin nhóm.
-            </p>
-            <a href="tran_thanh_tra/index.html" class="profile-link"
-              >Xem trang cá nhân &rarr;</a
-            >
+          <!-- Thành viên 3: Tạ Ánh Dương -->
+          <div class="member-card">
+            <img
+              src="https://api.dicebear.com/7.x/personas/svg?seed=TaAnhDuong"
+              alt="Ảnh đại diện Tạ Ánh Dương"
+            />
+            <div class="member-info">
+              <h3>Tạ Ánh Dương</h3>
+              <p>
+                <strong>Vai trò:</strong> Thiết kế giao diện (UI/UX)<br />
+                Định hình phong cách thị giác, bố cục thẻ trực quan, màu sắc và hoàn thiện trang cá nhân.
+              </p>
+              <a href="ta_anh_duong/index.html" class="profile-link">
+                Xem trang cá nhân &rarr;
+              </a>
+            </div>
           </div>
-        </div>
-        <!-- Thành viên 3 -->
-        <div class="member-card">
-          <img src="ta_anh_duong/link-anh.jpg" alt="Ảnh thành viên 3" />
-          <div class="member-info">
-            <h3>Tạ Ánh Dương</h3>
-            <p>
-              <strong>Vai trò:</strong> Thiết kế giao diện<br />Phối hợp với các
-              thành viên để xây dựng giao diện thân thiện và dễ sử dụng.
-            </p>
-            <a href="ta_anh_duong/index.html" class="profile-link"
-              >Xem trang cá nhân &rarr;</a
-            >
-          </div>
-        </div>
-        <!-- Thành viên 4 -->
-        <div class="member-card">
-          <img src="cao_hai_dang/link-anh.jpg" alt="Ảnh thành viên 4" />
-          <div class="member-info">
-            <h3>Cao Hải Đăng</h3>
-            <p>
-              <strong>Vai trò:</strong> Quản lý dự án<br />Theo dõi tiến độ công
-              việc và đảm bảo chất lượng sản phẩm.
-            </p>
-            <a href="cao_hai_dang/index.html" class="profile-link"
-              >Xem trang cá nhân &rarr;</a
-            >
-          </div>
-        </div>
 
-        <!-- Bạn có thể copy thêm thẻ div .member-card tương tự cho thành viên 3 và 4 nếu cần -->
-      </div>
+          <!-- Thành viên 4: Cao Hải Đăng -->
+          <div class="member-card">
+            <img
+              src="https://api.dicebear.com/7.x/personas/svg?seed=CaoHaiDang"
+              alt="Ảnh đại diện Cao Hải Đăng"
+            />
+            <div class="member-info">
+              <h3>Cao Hải Đăng</h3>
+              <p>
+                <strong>Vai trò:</strong> Quản lý dự án &amp; Kiểm thử<br />
+                Kiểm tra tính tương thích, xác minh liên kết, theo dõi deadline và hoàn thiện trang cá nhân.
+              </p>
+              <a href="cao_hai_dang/index.html" class="profile-link">
+                Xem trang cá nhân &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Bảng phân công công việc -->
+      <section class="section-card">
+        <h2 class="section-title">Bảng Phân Công Công Việc</h2>
+        <div class="table-wrapper">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th style="width: 50px;">STT</th>
+                <th style="width: 180px;">Tên thành viên</th>
+                <th style="width: 130px;">Vai trò</th>
+                <th>Nhiệm vụ phụ trách</th>
+                <th style="width: 120px;">Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><strong>Nguyễn Cao Phong</strong></td>
+                <td>Nhóm trưởng</td>
+                <td>Khởi tạo repository GitHub, cấu hình dự án, xây dựng khung trang nhóm và hoàn thiện trang cá nhân.</td>
+                <td><span class="status-pill">Đã hoàn thành</span></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><strong>Trần Thanh Trà</strong></td>
+                <td>Thành viên</td>
+                <td>Phát triển nội dung bài giới thiệu, tổng hợp thông tin nhóm và hoàn thiện trang cá nhân.</td>
+                <td><span class="status-pill">Đã hoàn thành</span></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><strong>Tạ Ánh Dương</strong></td>
+                <td>Thành viên</td>
+                <td>Thiết kế bố cục giao diện (UI/UX), tinh chỉnh CSS thẩm mỹ và hoàn thiện trang cá nhân.</td>
+                <td><span class="status-pill">Đã hoàn thành</span></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><strong>Cao Hải Đăng</strong></td>
+                <td>Thành viên</td>
+                <td>Quản lý tiến độ dự án, kiểm thử liên kết, viết form liên hệ và hoàn thiện trang cá nhân.</td>
+                <td><span class="status-pill">Đã hoàn thành</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 5. Form liên hệ -->
+      <section class="section-card">
+        <h2 class="section-title">Form Liên Hệ Với Nhóm</h2>
+        <form class="contact-form" action="#" method="post">
+          <div class="form-group">
+            <label for="fullname">Họ và tên của bạn:</label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="Nhập họ và tên..."
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Địa chỉ Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@phenikaa-uni.edu.vn"
+              required
+            />
+          </div>
+          <div class="form-group form-group-full">
+            <label for="message">Lời nhắn hoặc ý kiến đóng góp:</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Nhập lời nhắn gửi đến nhóm..."
+            ></textarea>
+          </div>
+          <div class="form-group form-group-full">
+            <input type="submit" value="Gửi thông tin liên hệ" />
+          </div>
+        </form>
+      </section>
+
+      <footer>
+        <p>&copy; 2026 Nhóm 7 (G7) - Môn Xây dựng Ứng dụng Web - Khoa Công nghệ Thông tin</p>
+      </footer>
     </div>
   </body>
 </html>

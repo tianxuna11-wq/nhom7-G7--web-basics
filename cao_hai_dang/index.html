@@ -2,46 +2,315 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Trang Giới Thiệu Cá Nhân - [Họ và tên]</title>
-  </head>
-  <body style="font-family: Arial, sans-serif; margin: 40px; line-height: 1.6">
-    <!-- Nút quay lại trang chủ nhóm (Tùy chọn) -->
-    <p><a href="../index.html">&larr; Quay lại trang chủ nhóm</a></p>
-
-    <h1>Trang Giới Thiệu Cá Nhân</h1>
-    <hr />
-
-    <!-- Hình ảnh đại diện (Thay link-anh-cua-ban.jpg bằng tên file ảnh thực tế của thành viên) -->
-    <img
-      src="link-anh-cua-ban.jpg"
-      alt="Ảnh đại diện"
-      width="150"
-      height="150"
-      style="border-radius: 50%; object-fit: cover"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cao Hải Đăng | Trang giới thiệu cá nhân</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
     />
+    <style>
+      :root {
+        --primary: #1565c0;
+        --primary-light: #1e88e5;
+        --accent: #ff9800;
+        --bg: #f5f7fb;
+        --card-bg: #ffffff;
+        --text: #1a202c;
+        --text-muted: #718096;
+        --border: #e2e8f0;
+        --shadow: 0 10px 25px rgba(21, 101, 192, 0.08);
+      }
 
-    <!-- Thông tin cơ bản -->
-    <h2>Thông tin sinh viên</h2>
-    <ul>
-      <li><strong>Họ và tên:</strong> [Điền họ và tên của bạn]</li>
-      <li><strong>Mã sinh viên:</strong> [Điền mã sinh viên của bạn]</li>
-      <li><strong>Ngày sinh:</strong> [Điền ngày sinh, ví dụ: DD/MM/YYYY]</li>
-      <li><strong>Giới tính:</strong> [Điền giới tính]</li>
-    </ul>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    <!-- Sở thích -->
-    <h2>Sở thích</h2>
-    <ul>
-      <li>[Sở thích 1, ví dụ: Đọc sách]</li>
-      <li>[Sở thích 2, ví dụ: Nghe nhạc]</li>
-      <li>[Sở thích 3, ví dụ: Chơi thể thao]</li>
-    </ul>
+      body {
+        font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        padding: 40px 20px;
+      }
 
-    <!-- Sở trường -->
-    <h2>Sở trường</h2>
-    <ul>
-      <li>[Sở trường hoặc kỹ năng 1, ví dụ: Tự học]</li>
-      <li>[Sở trường hoặc kỹ năng 2]</li>
-    </ul>
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .back-nav {
+        margin-bottom: 25px;
+      }
+
+      .back-nav a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        transition: transform 0.2s ease;
+      }
+
+      .back-nav a:hover {
+        transform: translateX(-4px);
+      }
+
+      .profile-card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        margin-bottom: 30px;
+      }
+
+      .profile-header {
+        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        color: white;
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .avatar-wrapper {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 16px;
+        border-radius: 50%;
+        border: 4px solid white;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      }
+
+      .avatar-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .profile-header h1 {
+        font-size: 28px;
+        margin-bottom: 6px;
+      }
+
+      .profile-header p {
+        font-size: 16px;
+        opacity: 0.95;
+      }
+
+      .profile-body {
+        padding: 30px;
+      }
+
+      .section-title {
+        font-size: 20px;
+        color: var(--primary);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 2px solid #edf2f7;
+        padding-bottom: 8px;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .info-item {
+        background: #f0f7ff;
+        padding: 14px 18px;
+        border-radius: 10px;
+        border-left: 4px solid var(--primary);
+      }
+
+      .info-item .label {
+        font-size: 13px;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+
+      .info-item .value {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      .list-group {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+
+      .list-item {
+        background: #fdfdfd;
+        border: 1px solid var(--border);
+        padding: 14px 18px;
+        border-radius: 10px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .list-item .icon {
+        font-size: 20px;
+        line-height: 1;
+      }
+
+      .list-item strong {
+        display: block;
+        color: var(--text);
+        margin-bottom: 3px;
+      }
+
+      .list-item span {
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .social-btn {
+        padding: 8px 18px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        color: white;
+        background: var(--primary);
+        transition: opacity 0.2s;
+      }
+
+      .social-btn:hover {
+        opacity: 0.9;
+      }
+
+      .social-btn.github {
+        background: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="back-nav">
+        <a href="../about.html">&larr; Quay lại trang giới thiệu nhóm</a>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="avatar-wrapper">
+            <img
+              src="https://api.dicebear.com/7.x/personas/svg?seed=CaoHaiDang"
+              alt="Ảnh đại diện Cao Hải Đăng"
+            />
+          </div>
+          <h1>Cao Hải Đăng</h1>
+          <p>Phụ trách Quản lý dự án &amp; Kiểm thử | Thành viên Nhóm G7</p>
+        </div>
+
+        <div class="profile-body">
+          <h2 class="section-title">📋 Thông Tin Sinh Viên</h2>
+          <div class="info-grid">
+            <div class="info-item">
+              <div class="label">Họ và tên</div>
+              <div class="value">Cao Hải Đăng</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Mã sinh viên</div>
+              <div class="value">24103133</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Ngày sinh</div>
+              <div class="value">05/11/2006</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Giới tính</div>
+              <div class="value">Nam</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Lớp chuyên ngành</div>
+              <div class="value">Kỹ thuật phần mềm - K18</div>
+            </div>
+            <div class="info-item">
+              <div class="label">Vai trò trong nhóm</div>
+              <div class="value">Quản lý dự án &amp; QA/Testing</div>
+            </div>
+          </div>
+
+          <h2 class="section-title">⚽ Sở Thích Cá Nhân</h2>
+          <ul class="list-group">
+            <li class="list-item">
+              <span class="icon">⚽</span>
+              <div>
+                <strong>Đá bóng &amp; Thể thao</strong>
+                <span>Rèn luyện thể lực, tinh thần đồng đội và nâng cao tính kỷ luật thông qua các trận cầu cuối tuần.</span>
+              </div>
+            </li>
+            <li class="list-item">
+              <span class="icon">♟️</span>
+              <div>
+                <strong>Cờ vua &amp; Board game</strong>
+                <span>Tập luyện khả năng tư duy chiến thuật, quan sát toàn cục và đưa ra quyết định chính xác.</span>
+              </div>
+            </li>
+            <li class="list-item">
+              <span class="icon">🚀</span>
+              <div>
+                <strong>Công nghệ &amp; Đổi mới</strong>
+                <span>Theo dõi xu hướng các sản phẩm phần mềm, tự động hóa và các startup công nghệ tiêu biểu.</span>
+              </div>
+            </li>
+          </ul>
+
+          <h2 class="section-title">⭐ Sở Trường &amp; Kỹ Năng</h2>
+          <ul class="list-group">
+            <li class="list-item">
+              <span class="icon">📊</span>
+              <div>
+                <strong>Quản lý tiến độ &amp; Tổ chức</strong>
+                <span>Lập kế hoạch công việc khoa học, theo dõi checklist deadline và duy trì nhịp độ làm việc.</span>
+              </div>
+            </li>
+            <li class="list-item">
+              <span class="icon">🛡️</span>
+              <div>
+                <strong>Kiểm thử chất lượng (QA/QC)</strong>
+                <span>Tỉ mỉ phát hiện lỗi hiển thị, kiểm tra tương thích giao diện và tính toàn vẹn của liên kết.</span>
+              </div>
+            </li>
+            <li class="list-item">
+              <span class="icon">🎯</span>
+              <div>
+                <strong>Tư duy giải quyết vấn đề</strong>
+                <span>Bình tĩnh phân tích nguyên nhân gốc rễ và tìm kiếm giải pháp thực tiễn, hiệu quả nhất.</span>
+              </div>
+            </li>
+          </ul>
+
+          <h2 class="section-title">🌐 Mạng Xã Hội &amp; Liên Hệ</h2>
+          <div class="social-links">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn github">GitHub Profile</a>
+            <a href="mailto:caohaidang@phenikaa-uni.edu.vn" class="social-btn">Gửi Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

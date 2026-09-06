@@ -1,5 +1,4 @@
-<style>
-      :root {
+:root {
         --desk: #1b2434;
         --paper: #e9ebe1;
         --paper-card: #f4f5ec;
@@ -582,4 +581,4 @@
           padding: 40px 0 28px;
         }
       }
-    </style>
+}
