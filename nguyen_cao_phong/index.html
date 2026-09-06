@@ -327,6 +327,46 @@
         max-width: 520px;
       }
 
+      /* ===== compact card for so-thich and so-truong ===== */
+      .compact-card {
+        background: var(--paper-card);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
+        padding: 24px 28px;
+        border: 1px solid var(--rule);
+      }
+      .compact-list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px 18px;
+        margin: 0;
+        padding: 0;
+      }
+      .compact-list li {
+        background: var(--paper);
+        border: 1.5px solid var(--rule);
+        border-radius: 8px;
+        padding: 12px 18px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      }
+      .compact-list li:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
+        border-color: var(--pen);
+        background: #fff;
+      }
+      .compact-list li .icon {
+        font-size: 1.25rem;
+        line-height: 1;
+      }
+
       /* ===== hobby cards ===== */
       .hobby-grid {
         display: grid;
@@ -669,46 +709,15 @@
           <div class="sec-head">
             <div class="eyebrow handwrite">✦ trang 02</div>
             <h2>Sở thích cá nhân</h2>
-            <p>
-              Những điều nhỏ bé nuôi dưỡng tâm hồn và đem lại nguồn năng lượng tích cực mỗi ngày.
-            </p>
           </div>
-          <div class="hobby-grid">
-            <article class="hobby-card">
-              <h3>Đọc sách</h3>
-              <p>
-                Đắm mình vào những trang sách văn học, tâm lý học và khoa học viễn
-                tưởng trong các buổi tối yên tĩnh.
-              </p>
-            </article>
-            <article class="hobby-card">
-              <h3>Lập trình &amp; công nghệ</h3>
-              <p>
-                Thích tìm hiểu công nghệ mới, tự mày mò dự án nhỏ và giải quyết
-                vấn đề thực tế bằng những dòng code.
-              </p>
-            </article>
-            <article class="hobby-card">
-              <h3>Nghe nhạc lo-fi &amp; indie</h3>
-              <p>
-                Những giai điệu nhẹ nhàng luôn là người bạn đồng hành khi học
-                tập hay làm việc một mình để duy trì sự tập trung.
-              </p>
-            </article>
-            <article class="hobby-card">
-              <h3>Game chiến thuật &amp; nhập vai</h3>
-              <p>
-                Đam mê những tựa game đòi hỏi tư duy chiến thuật, chiều sâu cốt truyện
-                và khả năng ra quyết định nhanh.
-              </p>
-            </article>
-            <article class="hobby-card">
-              <h3>Viết lách</h3>
-              <p>
-                Thích ghi lại suy nghĩ, cảm xúc qua những trang nhật ký hoặc bài
-                chia sẻ kiến thức cá nhân.
-              </p>
-            </article>
+          <div class="compact-card">
+            <ul class="compact-list">
+              <li><span class="icon">📚</span> Đọc sách</li>
+              <li><span class="icon">💻</span> Lập trình &amp; công nghệ</li>
+              <li><span class="icon">🎵</span> Nghe nhạc lo-fi &amp; indie</li>
+              <li><span class="icon">🎮</span> Game chiến thuật &amp; nhập vai</li>
+              <li><span class="icon">✍️</span> Viết lách</li>
+            </ul>
           </div>
         </section>
 
@@ -718,56 +727,15 @@
           <div class="sec-head">
             <div class="eyebrow handwrite">✦ trang 03</div>
             <h2>Sở trường &amp; Điểm mạnh</h2>
-            <p>
-              Những năng lực cốt lõi được rèn giũa bền bỉ qua quá trình học tập, nghiên cứu và làm việc thực tế.
-            </p>
           </div>
-          <div class="hobby-grid">
-            <article class="hobby-card">
-              <h3>Tư duy phản biện &amp; Phân tích</h3>
-              <p>
-                Khả năng tiếp nhận thông tin đa chiều, đánh giá khách quan và tổng hợp dữ liệu cốt lõi nhanh chóng.
-              </p>
-              <p class="strength">
-                Điểm mạnh: <mark>Phân tích &amp; Đánh giá</mark>
-              </p>
-            </article>
-            <article class="hobby-card">
-              <h3>Tư duy logic &amp; Thuật toán</h3>
-              <p>
-                Tiếp cận bài toán có hệ thống, bẻ nhỏ vấn đề phức tạp và tìm kiếm giải pháp tối ưu bằng giải thuật.
-              </p>
-              <p class="strength">
-                Điểm mạnh: <mark>Logic &amp; Problem Solving</mark>
-              </p>
-            </article>
-            <article class="hobby-card">
-              <h3>Tự học &amp; Nghiên cứu độc lập</h3>
-              <p>
-                Chủ động tìm kiếm tài liệu, kiên trì thử nghiệm và làm chủ công cụ/công nghệ mới trong thời gian ngắn.
-              </p>
-              <p class="strength">
-                Điểm mạnh: <mark>Tự học nhanh &amp; Thích ứng</mark>
-              </p>
-            </article>
-            <article class="hobby-card">
-              <h3>Tập trung cao độ &amp; Tỉ mỉ</h3>
-              <p>
-                Khả năng làm việc sâu (deep work) liên tục, chú trọng từng chi tiết nhỏ và hạn chế tối đa sai sót.
-              </p>
-              <p class="strength">
-                Điểm mạnh: <mark>Deep Work &amp; Kiên nhẫn</mark>
-              </p>
-            </article>
-            <article class="hobby-card">
-              <h3>Lập kế hoạch &amp; Viết lách</h3>
-              <p>
-                Kỹ năng diễn đạt câu từ rõ ràng, cấu trúc tài liệu mạch lạc và quản lý công việc theo mục tiêu khoa học.
-              </p>
-              <p class="strength">
-                Điểm mạnh: <mark>Diễn đạt &amp; Tổ chức</mark>
-              </p>
-            </article>
+          <div class="compact-card">
+            <ul class="compact-list">
+              <li><span class="icon">🔍</span> Tư duy phản biện &amp; Phân tích</li>
+              <li><span class="icon">⚙️</span> Tư duy logic &amp; Thuật toán</li>
+              <li><span class="icon">📖</span> Tự học &amp; Nghiên cứu độc lập</li>
+              <li><span class="icon">🎯</span> Tập trung cao độ &amp; Tỉ mỉ</li>
+              <li><span class="icon">📅</span> Lập kế hoạch &amp; Quản lý thời gian</li>
+            </ul>
           </div>
         </section>
 
