@@ -147,6 +147,42 @@
         color: var(--text);
       }
 
+      .goal-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .goal-item {
+        background: linear-gradient(135deg, #fffaf0, #fff);
+        border: 1px solid #f5e7c3;
+        border-left: 4px solid var(--accent);
+        border-radius: 10px;
+        padding: 16px 18px;
+      }
+
+      .goal-item .goal-label {
+        display: block;
+        color: var(--primary);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .goal-item strong {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+
+      .goal-item span {
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
       .list-group {
         list-style: none;
         display: grid;
@@ -234,11 +270,11 @@
             </div>
             <div class="info-item">
               <div class="label">Mã sinh viên</div>
-              <div class="value">24103131</div>
+              <div class="value">24103599</div>
             </div>
             <div class="info-item">
               <div class="label">Ngày sinh</div>
-              <div class="value">15/08/2006</div>
+              <div class="value">07/06/2006</div>
             </div>
             <div class="info-item">
               <div class="label">Giới tính</div>
@@ -246,11 +282,30 @@
             </div>
             <div class="info-item">
               <div class="label">Lớp chuyên ngành</div>
-              <div class="value">Kỹ thuật phần mềm - K18</div>
+              <div class="value">Thương mại điện tử - K18</div>
             </div>
             <div class="info-item">
               <div class="label">Vai trò trong nhóm</div>
               <div class="value">Phát triển nội dung &amp; Tài liệu</div>
+            </div>
+          </div>
+
+          <h2 class="section-title">🎯 Mục Tiêu Nghề Nghiệp</h2>
+          <div class="goal-grid">
+            <div class="goal-item">
+              <span class="goal-label">Mục tiêu ngắn hạn</span>
+              <strong>Rèn luyện kỹ năng lập trình</strong>
+              <span>Học và thực hành tốt HTML, CSS, JavaScript để xây dựng giao diện web chuyên nghiệp.</span>
+            </div>
+            <div class="goal-item">
+              <span class="goal-label">Mục tiêu trung hạn</span>
+              <strong>Phát triển sản phẩm thực tế</strong>
+              <span>Tham gia các dự án nhỏ, làm việc nhóm và hoàn thiện kỹ năng giải quyết vấn đề.</span>
+            </div>
+            <div class="goal-item">
+              <span class="goal-label">Mục tiêu dài hạn</span>
+              <strong>Học tập và phát triển</strong>
+              <span>Trở thành người làm việc chăm chỉ, sáng tạo và có khả năng đóng góp giá trị cho cộng đồng.</span>
             </div>
           </div>
 
@@ -311,6 +366,10 @@
           </div>
         </div>
       </div>
+
+      <footer style="text-align: center; color: var(--text-muted); font-size: 14px; padding: 10px 0 20px;">
+        © 2026 | Nhóm G7 - Trần Thanh Trà
+      </footer>
     </div>
   </body>
 </html>
