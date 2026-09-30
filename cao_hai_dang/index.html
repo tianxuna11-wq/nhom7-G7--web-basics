@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trang Giới Thiệu Cá Nhân - [Họ và tên]</title>
+    <title>Trang Giới Thiệu Cá Nhân - Cao Hải Đăng</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -84,14 +84,17 @@
         border-radius: 50%;
         border: 4px solid white;
         overflow: hidden;
-        background: #fff;
+        background: #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
       }
 
-      .avatar-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .avatar-placeholder {
+        width: 60%;
+        height: 60%;
+        fill: #94a3b8;
       }
 
       .profile-header h1 {
@@ -215,15 +218,14 @@
 
       <div class="profile-card">
         <div class="profile-header">
-          <!-- Thay link-anh-cua-ban.jpg bằng file ảnh đại diện thật của bạn -->
+          <!-- Placeholder đại diện ban đầu -->
           <div class="avatar-wrapper">
-            <img
-              src="https://api.dicebear.com/7.x/personas/svg?seed=CaoHaiDang"
-              alt="Ảnh đại diện"
-            />
+            <svg class="avatar-placeholder" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
           </div>
-          <h1>[Họ và tên của bạn]</h1>
-          <p>[Vai trò trong nhóm | Thành viên Nhóm G7]</p>
+          <h1>Cao Hải Đăng</h1>
+          <p>Thành viên Nhóm G7</p>
         </div>
 
         <div class="profile-body">
@@ -231,27 +233,19 @@
           <div class="info-grid">
             <div class="info-item">
               <div class="label">Họ và tên</div>
-              <div class="value">[Điền họ và tên của bạn]</div>
+              <div class="value">Cao Hải Đăng</div>
             </div>
             <div class="info-item">
               <div class="label">Mã sinh viên</div>
-              <div class="value">[Điền mã sinh viên của bạn]</div>
+              <div class="value">23010486</div>
             </div>
             <div class="info-item">
               <div class="label">Ngày sinh</div>
-              <div class="value">[Điền ngày sinh, ví dụ: DD/MM/YYYY]</div>
+              <div class="value">04/12/2005</div>
             </div>
             <div class="info-item">
               <div class="label">Giới tính</div>
-              <div class="value">[Điền giới tính]</div>
-            </div>
-            <div class="info-item">
-              <div class="label">Lớp chuyên ngành</div>
-              <div class="value">[Điền lớp chuyên ngành của bạn]</div>
-            </div>
-            <div class="info-item">
-              <div class="label">Vai trò trong nhóm</div>
-              <div class="value">[Điền vai trò phụ trách trong nhóm]</div>
+              <div class="value">Nam</div>
             </div>
           </div>
 
@@ -260,22 +254,29 @@
             <li class="list-item">
               <span class="icon">✨</span>
               <div>
-                <strong>[Sở thích 1]</strong>
-                <span>[Mô tả ngắn về sở thích 1 của bạn]</span>
+                <strong>Nhảy</strong>
+                <span>Sở thích cá nhân</span>
               </div>
             </li>
             <li class="list-item">
               <span class="icon">✨</span>
               <div>
-                <strong>[Sở thích 2]</strong>
-                <span>[Mô tả ngắn về sở thích 2 của bạn]</span>
+                <strong>Vẽ</strong>
+                <span>Sở thích cá nhân</span>
               </div>
             </li>
             <li class="list-item">
               <span class="icon">✨</span>
               <div>
-                <strong>[Sở thích 3]</strong>
-                <span>[Mô tả ngắn về sở thích 3 của bạn]</span>
+                <strong>Chơi game</strong>
+                <span>Sở thích cá nhân</span>
+              </div>
+            </li>
+            <li class="list-item">
+              <span class="icon">✨</span>
+              <div>
+                <strong>Cầu lông</strong>
+                <span>Sở thích cá nhân</span>
               </div>
             </li>
           </ul>
@@ -285,22 +286,15 @@
             <li class="list-item">
               <span class="icon">🚀</span>
               <div>
-                <strong>[Sở trường / Kỹ năng 1]</strong>
-                <span>[Mô tả ngắn về sở trường hoặc kỹ năng 1]</span>
+                <strong>Xử lý tình huống nhanh</strong>
+                <span>Kỹ năng sở trường</span>
               </div>
             </li>
             <li class="list-item">
               <span class="icon">🚀</span>
               <div>
-                <strong>[Sở trường / Kỹ năng 2]</strong>
-                <span>[Mô tả ngắn về sở trường hoặc kỹ năng 2]</span>
-              </div>
-            </li>
-            <li class="list-item">
-              <span class="icon">🚀</span>
-              <div>
-                <strong>[Sở trường / Kỹ năng 3]</strong>
-                <span>[Mô tả ngắn về sở trường hoặc kỹ năng 3]</span>
+                <strong>Multi task tốt</strong>
+                <span>Kỹ năng sở trường</span>
               </div>
             </li>
           </ul>
@@ -308,7 +302,8 @@
           <h2 class="section-title">🌐 Mạng Xã Hội &amp; Liên Hệ</h2>
           <div class="social-links">
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn github">GitHub Profile</a>
-            <a href="mailto:example@phenikaa-uni.edu.vn" class="social-btn">Gửi Email</a>
+            <a href="mailto:dangdola2005@gmail.com" class="social-btn">Email: dangdola2005@gmail.com</a>
+            <a href="tel:0961237205" class="social-btn">SĐT: 0961237205</a>
           </div>
         </div>
       </div>
